@@ -1,0 +1,21 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Interface Config</h1>
+    <form action="" method="post" name="conf_data">
+            接口名称:<input type="text" id="in_name" name="inter_name"><br>
+            地址:<input type="text" name="inter_url"><br>
+            请求方式:<select name="inter_type">
+                        <option>Get</option>
+                        <option selected>Post</option>
+                        <option>Socket</option>
+                    </select><br>
+            接口参数:<textarea name="inter_param"></textarea><br>
+            预期结果:<textarea name="inter_expect"></textarea><br>
+
+        <input type="submit" value="保存" onclick="isEmpty()">
+    </form>
+<script>
+    console.log(isEmpty)
+</script>
+{% endblock %}

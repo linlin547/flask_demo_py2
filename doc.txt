@@ -1,0 +1,16 @@
+1／获取参数方法：
+    request.form.get("key", type=str, default=None) 获取表单数据，
+    request.args.get("key") 获取get请求参数，
+    request.values.get("key") 获取所有参数，推荐使用request.values.get().
+    1.1/获取多选
+        s_option =  request.values.getlist("s_option") # 参数为标签name属性
+        for s in s_option:
+            pass
+    1.2/后去单选和下拉框
+        request.values.get("key") # 参数为标签name属性
+2／调用带参数路由
+    @app.route('/index/<param>')
+    def index_users(param):
+    调用方法：
+        return redirect(url_for('index_users',param="aaaa"))
+
